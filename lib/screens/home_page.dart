@@ -27,6 +27,19 @@ class HomePage extends ConsumerWidget {
                 return ListTile(
                   title: Text(save.name),
                   subtitle: Text('ちんすこう: ${save.state.count}'),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.delete),
+                    onPressed: () async {
+                      // SaveDataNotifier 経由でセーブデータを削除する
+                      await ref
+                          .read(saveDataNotifierProvider.notifier)
+                          .deleteSave(save.id);
+                      // 削除後、SnackBar で通知（任意）
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('セーブデータを削除しました')),
+                      );
+                    },
+                  ),
                   onTap: () async {
                     // 選択したセーブでゲーム開始
                     await Navigator.push(

@@ -8,7 +8,7 @@ class ChinsukoCounter extends StateNotifier<ChinsukoState> {
 
   // 基本価格と倍率（ここでは例として1.5倍）を定義
   static const int baseCost = 10;
-  static const double multiplier = 1.1;
+  static const double multiplier = 1.2;
 
   // 次に購入するカーソルの必要ちんすこう数を計算
   int get nextCursorCost => (baseCost * pow(multiplier, state.cursors)).round();
