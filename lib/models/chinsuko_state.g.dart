@@ -9,9 +9,11 @@ part of 'chinsuko_state.dart';
 _$ChinsukoStateImpl _$$ChinsukoStateImplFromJson(Map<String, dynamic> json) =>
     _$ChinsukoStateImpl(
       count: (json['count'] as num?)?.toInt() ?? 0,
+      cursors: (json['cursors'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$ChinsukoStateImplToJson(_$ChinsukoStateImpl instance) =>
     <String, dynamic>{
       'count': instance.count,
+      'cursors': instance.cursors,
     };

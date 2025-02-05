@@ -21,6 +21,7 @@ ChinsukoState _$ChinsukoStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ChinsukoState {
   int get count => throw _privateConstructorUsedError;
+  int get cursors => throw _privateConstructorUsedError;
 
   /// Serializes this ChinsukoState to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +39,7 @@ abstract class $ChinsukoStateCopyWith<$Res> {
           ChinsukoState value, $Res Function(ChinsukoState) then) =
       _$ChinsukoStateCopyWithImpl<$Res, ChinsukoState>;
   @useResult
-  $Res call({int count});
+  $Res call({int count, int cursors});
 }
 
 /// @nodoc
@@ -57,11 +58,16 @@ class _$ChinsukoStateCopyWithImpl<$Res, $Val extends ChinsukoState>
   @override
   $Res call({
     Object? count = null,
+    Object? cursors = null,
   }) {
     return _then(_value.copyWith(
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      cursors: null == cursors
+          ? _value.cursors
+          : cursors // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -75,7 +81,7 @@ abstract class _$$ChinsukoStateImplCopyWith<$Res>
       __$$ChinsukoStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int count});
+  $Res call({int count, int cursors});
 }
 
 /// @nodoc
@@ -92,11 +98,16 @@ class __$$ChinsukoStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? count = null,
+    Object? cursors = null,
   }) {
     return _then(_$ChinsukoStateImpl(
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      cursors: null == cursors
+          ? _value.cursors
+          : cursors // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -105,7 +116,7 @@ class __$$ChinsukoStateImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ChinsukoStateImpl implements _ChinsukoState {
-  const _$ChinsukoStateImpl({this.count = 0});
+  const _$ChinsukoStateImpl({this.count = 0, this.cursors = 0});
 
   factory _$ChinsukoStateImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChinsukoStateImplFromJson(json);
@@ -113,10 +124,13 @@ class _$ChinsukoStateImpl implements _ChinsukoState {
   @override
   @JsonKey()
   final int count;
+  @override
+  @JsonKey()
+  final int cursors;
 
   @override
   String toString() {
-    return 'ChinsukoState(count: $count)';
+    return 'ChinsukoState(count: $count, cursors: $cursors)';
   }
 
   @override
@@ -124,12 +138,13 @@ class _$ChinsukoStateImpl implements _ChinsukoState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChinsukoStateImpl &&
-            (identical(other.count, count) || other.count == count));
+            (identical(other.count, count) || other.count == count) &&
+            (identical(other.cursors, cursors) || other.cursors == cursors));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, count);
+  int get hashCode => Object.hash(runtimeType, count, cursors);
 
   /// Create a copy of ChinsukoState
   /// with the given fields replaced by the non-null parameter values.
@@ -148,13 +163,16 @@ class _$ChinsukoStateImpl implements _ChinsukoState {
 }
 
 abstract class _ChinsukoState implements ChinsukoState {
-  const factory _ChinsukoState({final int count}) = _$ChinsukoStateImpl;
+  const factory _ChinsukoState({final int count, final int cursors}) =
+      _$ChinsukoStateImpl;
 
   factory _ChinsukoState.fromJson(Map<String, dynamic> json) =
       _$ChinsukoStateImpl.fromJson;
 
   @override
   int get count;
+  @override
+  int get cursors;
 
   /// Create a copy of ChinsukoState
   /// with the given fields replaced by the non-null parameter values.
